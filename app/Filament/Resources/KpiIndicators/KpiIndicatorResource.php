@@ -13,14 +13,19 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class KpiIndicatorResource extends Resource
 {
+    protected static string|UnitEnum|null $navigationGroup = 'Manajemen Kinerja';
+
+    protected static ?int $navigationSort = 1;
+    
     protected static ?string $model = KpiIndicator::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedPresentationChartBar;
 
-    protected static ?string $recordTitleAttribute = 'KpiIndicator';
+    protected static ?string $recordTitleAttribute = 'indicator_name';
 
     protected static ?string $modelLabel = 'Indikator KPI';
 

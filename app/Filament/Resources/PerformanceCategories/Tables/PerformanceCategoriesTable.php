@@ -47,6 +47,6 @@ class PerformanceCategoriesTable
             ])
             ->emptyStateHeading('Belum ada Kategori Nilai')
             ->emptyStateDescription('Silakan tambahkan Kategori Nilai untuk mulai mengelola data.')
-            ->emptyStateIcon('heroicon-o-building-office-2');;
+            ->emptyStateIcon('heroicon-o-squares-plus');
     }
 }

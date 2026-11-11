@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\PerformanceAppraisals\Tables;
 
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -17,6 +18,13 @@ class PerformanceAppraisalsTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->headerActions([
+                Action::make('export')
+                    ->label('Export Excel')
+                    ->icon('heroicon-o-document-arrow-down')
+                    ->color('success')
+                    ->url(route('performance-appraisals.export')),
+            ])
             ->columns([
                 TextColumn::make('employee.name')
                     ->label('Nama Karyawan')
@@ -103,6 +111,6 @@ class PerformanceAppraisalsTable
             ])
             ->emptyStateHeading('Belum ada Penilaian')
             ->emptyStateDescription('Silakan tambahkan Penilaian untuk mulai mengelola data.')
-            ->emptyStateIcon('heroicon-o-building-office-2');
+            ->emptyStateIcon('heroicon-o-clipboard-document-check');
     }
 }

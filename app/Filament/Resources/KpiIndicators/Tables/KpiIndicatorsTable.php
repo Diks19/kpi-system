@@ -44,6 +44,6 @@ class KpiIndicatorsTable
             ])
             ->emptyStateHeading('Belum ada Indikator KPI')
             ->emptyStateDescription('Silakan tambahkan Indikator KPI untuk mulai mengelola data.')
-            ->emptyStateIcon('heroicon-o-building-office-2');
+            ->emptyStateIcon('heroicon-o-presentation-chart-bar');
     }
 }
