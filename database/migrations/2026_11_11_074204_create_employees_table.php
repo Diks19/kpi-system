@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->string('nik')->primary();
-            $table->foreignUuid('department_id')->constrained('departments', 'id_department')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignUuid('position_id')->constrained('positions', 'id_position')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignUuid('department_id')->constrained('departments', 'id_department')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignUuid('position_id')->constrained('positions', 'id_position')->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('name');
             $table->timestamps();
         });
